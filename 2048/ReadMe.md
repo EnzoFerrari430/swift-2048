@@ -1,0 +1,8 @@
+
+IOS  MVC 结构
+
+View监控手势的滑动，并将位移量交给Controller
+Controller通过位移得到方向，并将方向交给Model
+Model通过方向进行计算，然后传回这次位移的数值变化
+Controller将这次位置变化交回给View
+View根据这些变化之行各种动画效果
