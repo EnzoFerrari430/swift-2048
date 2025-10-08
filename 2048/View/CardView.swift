@@ -52,7 +52,7 @@ class CardView: UIView {
     */
     
     // 用于显示数字的label
-    private let label = UILabel()
+    public let label = TileView()
     
     private var value: Int = 0 {
         // didSet 属性观察者 在属性更新之后调用
@@ -84,6 +84,19 @@ class CardView: UIView {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10.0
         set(value: value)
+        label.onLongPress = { [weak self] in
+            guard let self = self else { return }
+            let row = (self.tag / 100) - 1
+            let col = self.tag % 100
+            print("长按了卡片，位置: row=\(row), col=\(col), 值=\(self.value)")
+            
+            // 这里可以添加消除逻辑或通知父视图
+            NotificationCenter.default.post(
+                name: .init("CardLongPressed"),
+                object: nil,
+                userInfo: ["position": (row, col), "value": self.value]
+            )
+        }
     }
     
     required init?(coder: NSCoder) {

@@ -21,6 +21,10 @@ class Card {
         return value
     }
     
+    func setValue(value: Int = 0) {
+        self.value = value
+    }
+    
     func upgrade() -> Int {
         value *= 2
         return value

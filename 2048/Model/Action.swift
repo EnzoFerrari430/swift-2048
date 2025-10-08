@@ -14,4 +14,5 @@ enum Action: Equatable {
     case new(at: Position, value: Int)
     case success
     case failure
+    case delete(at: Position) // 用于删除label
 }

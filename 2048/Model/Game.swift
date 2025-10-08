@@ -74,6 +74,12 @@ class Game {
         
     }
     
+    func cleanCard(at: Position) {
+        let row = at.row
+        let col = at.col
+        world[row][col].setValue(value: 0)
+    }
+    
     // 忽略外部参数名 外部调用的时候可以不指定参数名
     // Move也需要一个completion的闭包
     func move(_ direction: Direction, completion: (_ actions: [Action]) -> Void) {

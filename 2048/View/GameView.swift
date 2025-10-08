@@ -13,14 +13,14 @@ protocol GameViewDelegate {
 }
 
 class GameView: UIView {
-
+    
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
     
     var size = 0
     var delegate: GameViewDelegate? = nil
@@ -70,7 +70,7 @@ class GameView: UIView {
                 rect.fill()
             }
         }
-}
+    }
     
     func performActions(_ actions: [Action]) {
         for action in actions {
@@ -81,6 +81,8 @@ class GameView: UIView {
                 moveCard(from: from, to: to)
             case .upgrade(let from, let to, let newValue):
                 upgrade(from: from, to: to, newValue: newValue)
+            case .delete(let position):
+                delete(at: position)
             default:
                 break
             }
@@ -101,7 +103,7 @@ class GameView: UIView {
     // 清除所有卡片视图
     private func clearAllTiles() {
         // 方法1：遍历所有子视图，移除CardView类型的视图
-        /*
+        
         for subview in subviews {
             if subview is CardView {
                 // 添加淡出动画，使卡片消失更平滑
@@ -112,10 +114,10 @@ class GameView: UIView {
                 }
             }
         }
-        */
+        
         
         // 方法2（替代方案）：直接移除所有子视图
-        subviews.forEach { $0.removeFromSuperview() }
+        //subviews.forEach { $0.removeFromSuperview() }
     }
     
     // 获取当前位置上的CardView
@@ -165,6 +167,13 @@ class GameView: UIView {
                 cardView.removeFromSuperview()
             }
             self.newCard(at: to, withValue: newValue)
+        }
+    }
+    
+    // 删除卡片
+    private func delete(at position: Position) {
+        if let cardView = getCardView(at: position) {
+            cardView.removeFromSuperview()
         }
     }
     

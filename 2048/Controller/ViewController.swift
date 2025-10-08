@@ -30,24 +30,36 @@ class ViewController: UIViewController, GameViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameView.delegate = self
-        /*
-        game.start()
-        game.debugPrint()
-        game.move(.up)
-        game.debugPrint()
-        game.move(.down)
-        game.debugPrint()
-        game.move(.left)
-        game.debugPrint()
-        game.move(.right)
-        game.debugPrint()
-        */
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleCardLongPress(_:)),
+            name: Notification.Name("CardLongPressed"),
+            object: nil
+        )
         
         // 延迟加载, 不写execute 直接添加延时任务
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.startGame()
-            // self.showSimpleAlert()
         }
+    }
+    
+    @objc private func handleCardLongPress(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let positionTuple = userInfo["position"] as? (Int, Int),
+              let value = userInfo["value"] as? Int else {
+            return
+        }
+        
+        print("收到长按事件 - 位置: \(positionTuple), 值: \(value)")
+        
+        let position = Position(row: positionTuple.0, col: positionTuple.1)
+        
+        game.cleanCard(at: position)
+        // 创建删除 action
+        let deleteAction = Action.delete(at: position)
+        // 在这里实现消除逻辑
+        gameView.performActions([deleteAction])
     }
     
     private func startGame() {
