@@ -30,6 +30,19 @@ class GameView: UIView {
     
     private let margin: CGFloat = 5.0
     
+    // 计分label
+    private let scoreLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = UIColor(r: 119, g: 110, b: 101)
+        label.textAlignment = .left
+        label.text = "Score: 0"
+        return label
+    }()
+    
+    // 当前分数
+    private var currentScore: Int = 0
+    
     // 只读计算属性
     private var drawBound: CGRect {
         // self.bounds
@@ -57,6 +70,26 @@ class GameView: UIView {
         location.x += margin + drawBound.origin.x
         location.y += margin + drawBound.origin.y
         return CGRect(origin: location, size: cardSize)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // 设置scoreLabel的位置在左上角
+        scoreLabel.frame = CGRect(x: 20, y: 20, width: 150, height: 30)
+        if scoreLabel.superview == nil {
+            addSubview(scoreLabel)
+        }
+    }
+    
+    private func updateScore() {
+        var total = 0
+        for subview in subviews {
+            if let cardView = subview as? CardView {
+                total += cardView.value
+            }
+        }
+        currentScore = total
+        scoreLabel.text = "Score: \(total)"
     }
     
     override func draw(_ rect: CGRect) {
@@ -87,17 +120,16 @@ class GameView: UIView {
                 break
             }
         }
+        updateScore()
     }
     
     func reset() {
         // 1. 清除现有内容
         clearAllTiles()
         
-        // 2. 重置状态
-        //setupInitialState()
-        
-        // 3. 请求重绘（触发系统调用draw(_:)）
-        //setNeedsDisplay()
+        // 2. 重置分数
+        currentScore = 0
+        scoreLabel.text = "Score: 0"
     }
     
     // 清除所有卡片视图

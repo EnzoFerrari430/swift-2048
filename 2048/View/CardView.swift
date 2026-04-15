@@ -52,9 +52,10 @@ class CardView: UIView {
     */
     
     // 用于显示数字的label
-    public let label = TileView()
+    let label: TileView
+    private var bubbleView: UIView?
     
-    private var value: Int = 0 {
+    var value: Int = 0 {
         // didSet 属性观察者 在属性更新之后调用
         didSet {
             if value == 0 {
@@ -79,6 +80,7 @@ class CardView: UIView {
     }
     
     init(frame: CGRect, value: Int) {
+        label = TileView(frame: frame)
         super.init(frame: frame)
         self.frame = frame
         self.layer.masksToBounds = true
@@ -100,7 +102,11 @@ class CardView: UIView {
     }
     
     required init?(coder: NSCoder) {
+        label = TileView(frame: .zero)
         super.init(coder: coder)
+        
+        // 让label跟随当前bounds
+        label.frame = self.bounds
     }
     
     func updateValue(to newValue: Int) {
@@ -157,6 +163,105 @@ class CardView: UIView {
                 self.transform = .identity
             }
         )
+    }
+    
+    private func setupGesture() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        longPress.minimumPressDuration = 0.3
+        self.addGestureRecognizer(longPress)
+        self.isUserInteractionEnabled = true
+    }
+    
+    @objc private func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            showBubbleEffect()
+            provideHapticFeedback()
+        case .ended, .cancelled:
+            if let bubbleView = bubbleView {
+                // 检查是否应该触发消除
+                let location = gesture.location(in: self)
+                if bounds.contains(location) {
+                    // 触发消除
+                    breakBubbleEffect()
+                } else {
+                    // 只是取消
+                    hideBubbleEffect()
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    private func showBubbleEffect() {
+        hideBubbleEffect()
+        bubbleView = label.addBubbleEffect()
+        bubbleView?.animateBubbleAppear()
+    }
+    
+    private func hideBubbleEffect() {
+        bubbleView?.animateBubbleDisappear {
+            self.bubbleView = nil
+        }
+    }
+    
+    func breakBubbleEffect(completion: (() -> Void)? = nil) {
+        // 创建粒子效果
+        createParticleEffect()
+        
+        // 隐藏卡片和气泡
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 0
+            self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.bubbleView?.alpha = 0
+        }) { _ in
+            self.bubbleView?.removeFromSuperview()
+            self.bubbleView = nil
+            completion?()
+        }
+    }
+    
+    private func createParticleEffect() {
+        let particleEmitter = CAEmitterLayer()
+        particleEmitter.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
+        particleEmitter.emitterSize = CGSize(width: bounds.width, height: bounds.height)
+        particleEmitter.emitterShape = .circle
+        particleEmitter.renderMode = .additive
+        
+        let cell = CAEmitterCell()
+        cell.birthRate = 20
+        cell.lifetime = 1.0
+        cell.velocity = 100
+        cell.velocityRange = 50
+        cell.emissionRange = .pi * 2
+        cell.scale = 0.1
+        cell.scaleRange = 0.05
+        cell.alphaSpeed = -1.0
+        cell.contents = createBubbleParticleImage().cgImage
+        
+        particleEmitter.emitterCells = [cell]
+        layer.addSublayer(particleEmitter)
+        
+        // 自动移除粒子层
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            particleEmitter.removeFromSuperlayer()
+        }
+    }
+    
+    private func createBubbleParticleImage() -> UIImage {
+        let size = CGSize(width: 8, height: 8)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        
+        return renderer.image { context in
+            UIColor.white.setFill()
+            context.cgContext.fillEllipse(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    
+    private func provideHapticFeedback() {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
 
 }

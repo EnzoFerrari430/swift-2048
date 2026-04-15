@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "1A4B0735-52ED-428F-A7DD-6CD69D941BE6"
+   uuid = "D476B3A6-5372-4026-8E3E-70045D86A757"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3845688E-53B6-4911-B433-77E320E0EEE6"
+            uuid = "11441A68-B7A6-4038-A942-2182330098A7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "2048/View/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "value"
             landmarkType = "24">
          </BreakpointContent>
