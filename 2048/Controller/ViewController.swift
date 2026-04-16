@@ -12,6 +12,16 @@ class ViewController: UIViewController, GameViewDelegate {
     private let size = 4
     private lazy var game = Game(size: size)
     
+    // 计分label
+    private let scoreLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = UIColor(r: 119, g: 110, b: 101)
+        label.textAlignment = .left
+        label.text = "Score: 0"
+        return label
+    }()
+    
     // 在IB（storyboard）文件选中控件按住ctrl键进行拖拽
     @IBOutlet weak var gameView: GameView! {
         didSet {
@@ -30,6 +40,22 @@ class ViewController: UIViewController, GameViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameView.delegate = self
+        
+        // 设置scoreLabel位置在gameView上方，左对齐
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scoreLabel)
+        
+        // 移除gameView原有的top约束，替换为新的约束
+        if let existingTopConstraint = gameView.constraints.first(where: { $0.firstAttribute == .top }) {
+            existingTopConstraint.isActive = false
+        }
+        
+        NSLayoutConstraint.activate([
+            scoreLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            scoreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            scoreLabel.heightAnchor.constraint(equalToConstant: 30),
+            gameView.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 10)
+        ])
         
         NotificationCenter.default.addObserver(
             self,
@@ -153,6 +179,16 @@ class ViewController: UIViewController, GameViewDelegate {
         
         // 显示对话框
         present(alert, animated: true)
+    }
+    
+    // MARK: - GameViewDelegate
+    
+    func updateScore(_ score: Int) {
+        scoreLabel.text = "Score: \(score)"
+    }
+    
+    func resetScore() {
+        scoreLabel.text = "Score: 0"
     }
 
 }

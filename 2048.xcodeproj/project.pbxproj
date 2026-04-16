@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C31D48B03307173459D93B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		06F5373BD0B5FE50EF591D43 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		091EB52A6E116A1ABE00B1C3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
+		3DFC0218FDF14F85B9A4C4AB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		7D21BFE6AA746976BAB7B955 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		7F2AC53928E8CA7ACD797C25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		83846A4AC7176DF60765D6A7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		844206CAE0F659B4B93F2E15 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		86789A00A636AD7DF10C3772 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		8F8BD5D3983CFD9234110953 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		94582E73912B4DEA6C22B981 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		9807F821EB6A5B084449F2A8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		99BD8590724CC4CA919E99E2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		A1C8B1B08FC1C191EDCBCEE7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
+		A308CF45CE7EADD1FCCE2864 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
+		C052359D7F039CEA40E15A46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		C1D88FBE7DE617E5B3A61BA1 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
 		C44E0C2DA2E88D75737F21E4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		CBAAC5A33CD4B977EEED9CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		DF4F52090AC4C7B6AB02A248 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		27766964EB880DB9512AB1F8 /* GameView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = 2048/View/GameView.swift; sourceTree = SOURCE_ROOT; };
+		3F39DC0945571E9E2219A08D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = 2048/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCAE017A0A0109648C7D0514 /* CardView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = 2048/View/CardView.swift; sourceTree = SOURCE_ROOT; };
 		C574DBD837CB911C7DB5D3F0 /* TileView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = 2048/View/TileView.swift; sourceTree = SOURCE_ROOT; };
 		EDC27B982D0D343A00D711F7 /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +127,7 @@
 				BCAE017A0A0109648C7D0514 /* CardView.swift */,
 				C574DBD837CB911C7DB5D3F0 /* TileView.swift */,
 				27766964EB880DB9512AB1F8 /* GameView.swift */,
+				3F39DC0945571E9E2219A08D /* ViewController.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +289,11 @@
 				8F8BD5D3983CFD9234110953 /* CardView.swift in Sources */,
 				83846A4AC7176DF60765D6A7 /* GameView.swift in Sources */,
 				06F5373BD0B5FE50EF591D43 /* GameView.swift in Sources */,
+				A1C8B1B08FC1C191EDCBCEE7 /* GameView.swift in Sources */,
+				00C31D48B03307173459D93B /* GameView.swift in Sources */,
+				1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */,
+				844206CAE0F659B4B93F2E15 /* GameView.swift in Sources */,
+				A308CF45CE7EADD1FCCE2864 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +305,12 @@
 				C1D88FBE7DE617E5B3A61BA1 /* TileView.swift in Sources */,
 				544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */,
 				94582E73912B4DEA6C22B981 /* GameView.swift in Sources */,
+				091EB52A6E116A1ABE00B1C3 /* GameView.swift in Sources */,
+				9807F821EB6A5B084449F2A8 /* CardView.swift in Sources */,
+				C052359D7F039CEA40E15A46 /* ViewController.swift in Sources */,
+				43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */,
+				7F2AC53928E8CA7ACD797C25 /* CardView.swift in Sources */,
+				CBAAC5A33CD4B977EEED9CA4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D21BFE6AA746976BAB7B955 /* GameView.swift in Sources */,
+				3DFC0218FDF14F85B9A4C4AB /* GameView.swift in Sources */,
+				99BD8590724CC4CA919E99E2 /* GameView.swift in Sources */,
+				86789A00A636AD7DF10C3772 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

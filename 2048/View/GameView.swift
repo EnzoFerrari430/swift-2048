@@ -8,8 +8,10 @@
 import UIKit
 
 // 手势相关 在ViewController中实现
-protocol GameViewDelegate {
+protocol GameViewDelegate: AnyObject {
     func slideEnded(offset: CGPoint)
+    func updateScore(_ score: Int)
+    func resetScore()
 }
 
 class GameView: UIView {
@@ -29,19 +31,6 @@ class GameView: UIView {
     private var touchingDetectable = true
     
     private let margin: CGFloat = 5.0
-    
-    // 计分label
-    private let scoreLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = UIColor(r: 119, g: 110, b: 101)
-        label.textAlignment = .left
-        label.text = "Score: 0"
-        return label
-    }()
-    
-    // 当前分数
-    private var currentScore: Int = 0
     
     // 只读计算属性
     private var drawBound: CGRect {
@@ -72,26 +61,6 @@ class GameView: UIView {
         return CGRect(origin: location, size: cardSize)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // 设置scoreLabel的位置在左上角
-        scoreLabel.frame = CGRect(x: 20, y: 20, width: 150, height: 30)
-        if scoreLabel.superview == nil {
-            addSubview(scoreLabel)
-        }
-    }
-    
-    private func updateScore() {
-        var total = 0
-        for subview in subviews {
-            if let cardView = subview as? CardView {
-                total += cardView.value
-            }
-        }
-        currentScore = total
-        scoreLabel.text = "Score: \(total)"
-    }
-    
     override func draw(_ rect: CGRect) {
         UIColor(displayP3Red: 0.8, green: 0.75, blue: 0.71, alpha: 1).setFill()
         for row in 0..<size {
@@ -103,6 +72,17 @@ class GameView: UIView {
                 rect.fill()
             }
         }
+    }
+    
+    // 计算当前分数并通知delegate
+    private func notifyScoreUpdate() {
+        var total = 0
+        for subview in subviews {
+            if let cardView = subview as? CardView {
+                total += cardView.value
+            }
+        }
+        delegate?.updateScore(total)
     }
     
     func performActions(_ actions: [Action]) {
@@ -120,36 +100,32 @@ class GameView: UIView {
                 break
             }
         }
-        updateScore()
+        notifyScoreUpdate()
     }
     
     func reset() {
-        // 1. 清除现有内容
         clearAllTiles()
-        
-        // 2. 重置分数
-        currentScore = 0
-        scoreLabel.text = "Score: 0"
+        delegate?.resetScore()
     }
     
     // 清除所有卡片视图
     private func clearAllTiles() {
         // 方法1：遍历所有子视图，移除CardView类型的视图
         
-        for subview in subviews {
-            if subview is CardView {
-                // 添加淡出动画，使卡片消失更平滑
-                UIView.animate(withDuration: 0.2, animations: {
-                    subview.alpha = 0
-                }) { _ in
-                    subview.removeFromSuperview()
-                }
-            }
-        }
+//        for subview in subviews {
+//            if subview is CardView {
+//                // 添加淡出动画，使卡片消失更平滑
+//                UIView.animate(withDuration: 0.2, animations: {
+//                    subview.alpha = 0
+//                }) { _ in
+//                    subview.removeFromSuperview()
+//                }
+//            }
+//        }
         
         
         // 方法2（替代方案）：直接移除所有子视图
-        //subviews.forEach { $0.removeFromSuperview() }
+        subviews.forEach { $0.removeFromSuperview() }
     }
     
     // 获取当前位置上的CardView
