@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, GameViewDelegate {
 
     private let size = 4
     private lazy var game = Game(size: size)
     
+    // 背景音乐播放器
+    private var backgroundMusicPlayer: AVAudioPlayer?
+
     // 计分label
     private let scoreLabel: UILabel = {
         let label = UILabel()
@@ -56,6 +60,9 @@ class ViewController: UIViewController, GameViewDelegate {
             scoreLabel.heightAnchor.constraint(equalToConstant: 30),
             gameView.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 10)
         ])
+
+        // 设置背景音乐
+        setupBackgroundMusic()
         
         NotificationCenter.default.addObserver(
             self,
@@ -67,6 +74,22 @@ class ViewController: UIViewController, GameViewDelegate {
         // 延迟加载, 不写execute 直接添加延时任务
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.startGame()
+        }
+    }
+
+    private func setupBackgroundMusic() {
+        guard let url = Bundle.main.url(forResource: "background", withExtension: "mp3") else {
+            print("背景音乐文件未找到")
+            return
+        }
+        
+        do {
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            backgroundMusicPlayer?.numberOfLoops = -1  // 无限循环
+            backgroundMusicPlayer?.volume = 0.5         // 音量50%
+            backgroundMusicPlayer?.play()
+        } catch {
+            print("背景音乐播放失败: \(error)")
         }
     }
     

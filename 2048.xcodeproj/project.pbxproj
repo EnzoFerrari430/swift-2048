@@ -13,6 +13,7 @@
 		1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		3DFC0218FDF14F85B9A4C4AB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
+		4C0C4CD1054717038EEDAF90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		7D21BFE6AA746976BAB7B955 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		7F2AC53928E8CA7ACD797C25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
@@ -20,6 +21,7 @@
 		844206CAE0F659B4B93F2E15 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		86789A00A636AD7DF10C3772 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		8F8BD5D3983CFD9234110953 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		9158E0D6CAB29A1231C57816 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		94582E73912B4DEA6C22B981 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		9807F821EB6A5B084449F2A8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		99BD8590724CC4CA919E99E2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
@@ -50,18 +52,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27766964EB880DB9512AB1F8 /* GameView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = 2048/View/GameView.swift; sourceTree = SOURCE_ROOT; };
-		3F39DC0945571E9E2219A08D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = 2048/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		BCAE017A0A0109648C7D0514 /* CardView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = 2048/View/CardView.swift; sourceTree = SOURCE_ROOT; };
-		C574DBD837CB911C7DB5D3F0 /* TileView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = 2048/View/TileView.swift; sourceTree = SOURCE_ROOT; };
+		27766964EB880DB9512AB1F8 /* GameView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = GameView.swift; path = 2048/View/GameView.swift; sourceTree = SOURCE_ROOT; };
+		3F39DC0945571E9E2219A08D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ViewController.swift; path = 2048/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		BCAE017A0A0109648C7D0514 /* CardView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = CardView.swift; path = 2048/View/CardView.swift; sourceTree = SOURCE_ROOT; };
+		C574DBD837CB911C7DB5D3F0 /* TileView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = TileView.swift; path = 2048/View/TileView.swift; sourceTree = SOURCE_ROOT; };
 		EDC27B982D0D343A00D711F7 /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC27BAE2D0D343B00D711F7 /* 2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC27BB82D0D343B00D711F7 /* 2048UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2048UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0C7BA34696A3DD3ACEE4E6A /* CODEBUDDY.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; lastKnownFileType = net.daringfireball.markdown; name = CODEBUDDY.md; path = CODEBUDDY.md; sourceTree = SOURCE_ROOT; };
+		F0C7BA34696A3DD3ACEE4E6A /* CODEBUDDY.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = CODEBUDDY.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EDC27BC02D0D343B00D711F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		EDC27BC02D0D343B00D711F7 /* Exceptions for "2048" folder in "2048" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -74,7 +76,7 @@
 		EDC27B9A2D0D343A00D711F7 /* 2048 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				EDC27BC02D0D343B00D711F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				EDC27BC02D0D343B00D711F7 /* Exceptions for "2048" folder in "2048" target */,
 			);
 			path = 2048;
 			sourceTree = "<group>";
@@ -294,6 +296,7 @@
 				1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */,
 				844206CAE0F659B4B93F2E15 /* GameView.swift in Sources */,
 				A308CF45CE7EADD1FCCE2864 /* ViewController.swift in Sources */,
+				9158E0D6CAB29A1231C57816 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +314,7 @@
 				43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */,
 				7F2AC53928E8CA7ACD797C25 /* CardView.swift in Sources */,
 				CBAAC5A33CD4B977EEED9CA4 /* ViewController.swift in Sources */,
+				4C0C4CD1054717038EEDAF90 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

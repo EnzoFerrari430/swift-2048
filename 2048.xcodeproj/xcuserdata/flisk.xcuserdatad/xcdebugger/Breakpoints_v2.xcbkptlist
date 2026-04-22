@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "849573A6-8CE5-437B-8A24-980E1F3872C9"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "99C11CEB-8D8B-4119-B5FD-B576609D3E9C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            endingColumnNumber = "9223372036854775807"
+            endingLineNumber = "62"
             filePath = "2048/View/CardView.swift"
             startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "value"
-            landmarkType = "24">
+            startingLineNumber = "62">
+            <Actions>
+            </Actions>
+            <Locations>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "36C8FC37-5093-4BDE-9007-87D05D0EEB47"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            endingColumnNumber = "9223372036854775807"
+            endingLineNumber = "69"
             filePath = "2048/View/CardView.swift"
             startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "value"
-            landmarkType = "24">
+            startingLineNumber = "69">
+            <Actions>
+            </Actions>
+            <Locations>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
