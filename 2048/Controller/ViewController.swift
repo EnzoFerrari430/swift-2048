@@ -147,7 +147,7 @@ class ViewController: UIViewController, GameViewDelegate {
                 
                 // 添加重置游戏按钮
                 alert.addAction(UIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
-                    self?.resetGame() // 调用重置游戏的方法
+                    // self?.resetGame() // 调用重置游戏的方法
                 })
                 
                 // 显示对话框

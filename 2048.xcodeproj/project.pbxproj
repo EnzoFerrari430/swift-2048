@@ -22,6 +22,7 @@
 		544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		64800A03770BC67468391352 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		66F5DF83363CC61BA1B9E426 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
+		74A35B37088BA564ED4AD945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		7D21BFE6AA746976BAB7B955 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		7F2AC53928E8CA7ACD797C25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		7FE5CE52C59A961920B1697B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		CBAAC5A33CD4B977EEED9CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		DCB90484625F08569CEAA1FF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64165AF5E496856BCE86B353 /* Action.swift */; };
 		DF4F52090AC4C7B6AB02A248 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
+		FFED6A1DDE0E6E2748F31ECE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +89,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EDC27BC02D0D343B00D711F7 /* Exceptions for "2048" folder in "2048" target */ = {
+		EDC27BC02D0D343B00D711F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -105,7 +107,7 @@
 		EDC27B9A2D0D343A00D711F7 /* 2048 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				EDC27BC02D0D343B00D711F7 /* Exceptions for "2048" folder in "2048" target */,
+				EDC27BC02D0D343B00D711F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
 			);
 			path = 2048;
 			sourceTree = "<group>";
@@ -367,6 +369,7 @@
 				87DFD688EBFFDD80677198F3 /* Game.swift in Sources */,
 				8EB1B6F0718DCEDB41EC24B8 /* ExplodingLabel.swift in Sources */,
 				7FE5CE52C59A961920B1697B /* ViewController.swift in Sources */,
+				FFED6A1DDE0E6E2748F31ECE /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +384,7 @@
 				84B3A7BDA767D76915C657BD /* CardView.swift in Sources */,
 				0AEFC43DC229D127C044A2F1 /* Card.swift in Sources */,
 				23105D132CA682BF61A20CC8 /* BubbleLabelViewController.swift in Sources */,
+				74A35B37088BA564ED4AD945 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

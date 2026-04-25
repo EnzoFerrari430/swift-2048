@@ -19,26 +19,36 @@ extension UIColor {
     }
 }
 
-// 背景color
+// 背景color - 经典2048风格配色，渐变到高阶数字
 var back_color_dictionary: [Int: UIColor] = [
-    2:UIColor(r: 238, g: 228, b: 219, a: 1.0),
-    4:UIColor(r: 234, g: 224, b: 203, a: 1.0),
-    8:UIColor(r: 231, g: 179, b: 129, a: 1.0),
-    16:UIColor(r: 230, g: 153, b: 108, a: 1.0),
-    32:UIColor(r: 230, g: 130, b: 102, a: 1.0),
-    64:UIColor(r: 226, g: 103, b: 71, a: 1.0),
-    128:UIColor(r: 231, g: 207, b: 126, a: 1.0)
+    2:UIColor(r: 238, g: 228, b: 219),      // 浅米色
+    4:UIColor(r: 237, g: 224, b: 200),     // 米色
+    8:UIColor(r: 242, g: 177, b: 121),     // 橙色
+    16:UIColor(r: 245, g: 149, b: 99),     // 深橙色
+    32:UIColor(r: 246, g: 124, b: 95),     // 珊瑚红
+    64:UIColor(r: 246, g: 94, b: 59),       // 红色
+    128:UIColor(r: 237, g: 207, b: 114),   // 金黄色
+    256:UIColor(r: 237, g: 200, b: 80),    // 深金色
+    512:UIColor(r: 237, g: 197, b: 63),    // 亮金色
+    1024:UIColor(r: 237, g: 194, b: 46),   // 橙金色
+    2048:UIColor(r: 237, g: 194, b: 46),   // 金色 (2048达成)
+    4096:UIColor(r: 60, g: 58, b: 50),     // 深棕黑 (超级数字)
 ]
 
-// 添加文字color
+// 文字color - 小数字用深色，大数字用浅色
 var text_color_dictionary: [Int: UIColor] = [
-    2:UIColor(r: 107, g: 110, b: 102, a: 1.0),
-    4:UIColor(r: 107, g: 110, b: 102, a: 1.0),
-    8:UIColor(r: 249, g: 246, b: 243, a: 1.0),
-    16:UIColor(r: 249, g: 246, b: 243, a: 1.0),
-    32:UIColor(r: 249, g: 246, b: 243, a: 1.0),
-    64:UIColor(r: 249, g: 246, b: 243, a: 1.0),
-    128:UIColor(r: 249, g: 246, b: 243, a: 1.0)
+    2:UIColor(r: 119, g: 110, b: 101),     // 深灰
+    4:UIColor(r: 119, g: 110, b: 101),     // 深灰
+    8:UIColor(r: 249, g: 246, b: 242),     // 白色
+    16:UIColor(r: 249, g: 246, b: 242),    // 白色
+    32:UIColor(r: 249, g: 246, b: 242),    // 白色
+    64:UIColor(r: 249, g: 246, b: 242),    // 白色
+    128:UIColor(r: 249, g: 246, b: 242),   // 白色
+    256:UIColor(r: 249, g: 246, b: 242),   // 白色
+    512:UIColor(r: 249, g: 246, b: 242),   // 白色
+    1024:UIColor(r: 249, g: 246, b: 242),  // 白色
+    2048:UIColor(r: 249, g: 246, b: 242),  // 白色
+    4096:UIColor(r: 249, g: 246, b: 242), // 白色
 ]
 
 class CardView: UIView {
