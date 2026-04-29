@@ -37,14 +37,7 @@ class TileView: UILabel {
         }
     }
     
-    func showBubbleEffect() {
-        // 移除现有的气泡
-        hideBubbleEffect()
-        print("showBubbleEffect")
-        // 创建新气泡
-        bubbleView = self.addBubbleEffect()
-        bubbleView?.animateBubbleAppear()
-    }
+    // MARK: - 气泡效果
     
     func hideBubbleEffect() {
         bubbleView?.animateBubbleDisappear {

@@ -16,7 +16,6 @@
 		15188C8FCE3F2BF7DFF620BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A755A49B2015358A2BFB0539 /* SceneDelegate.swift */; };
 		1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		1CC7D33FA782EA37AFE60DD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
-		23105D132CA682BF61A20CC8 /* BubbleLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C718EB74543050F89E219 /* BubbleLabelViewController.swift */; };
 		26B27309AE71799B529CFA25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		3DFC0218FDF14F85B9A4C4AB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
@@ -24,6 +23,7 @@
 		544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		56BB3D6B45EA3A35D36958B9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		56DC8F8C92A44A386178022C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		595A20DD5BA63E2F6EC1C580 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		5F702B96946925CBD30B4064 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		61F96D38B9EE9CEF6B0E85C7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		64800A03770BC67468391352 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
@@ -39,7 +39,6 @@
 		86789A00A636AD7DF10C3772 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		87DFD688EBFFDD80677198F3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F4F4B28B43DF2E6007896 /* Game.swift */; };
 		8DD4C2F48CDB0E1EDC44A863 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
-		8EB1B6F0718DCEDB41EC24B8 /* ExplodingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B832FB67B0D97776D93D5C6 /* ExplodingLabel.swift */; };
 		8F8BD5D3983CFD9234110953 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		907B017929BF36C2954E1A21 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		9158E0D6CAB29A1231C57816 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
@@ -60,6 +59,7 @@
 		DCB90484625F08569CEAA1FF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64165AF5E496856BCE86B353 /* Action.swift */; };
 		DF4F52090AC4C7B6AB02A248 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
 		EA2B0C87D181E8360D29991A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		F78BB655783EA51806EA70A1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		FFED6A1DDE0E6E2748F31ECE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,12 +84,10 @@
 		055BED503C7CCFC4B1D36725 /* Contents.json */ = {isa = PBXFileReference; explicitFileType = text.json; name = Contents.json; path = 2048/View/Assets.xcassets/Contents.json; sourceTree = SOURCE_ROOT; };
 		27766964EB880DB9512AB1F8 /* GameView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = GameView.swift; path = 2048/View/GameView.swift; sourceTree = SOURCE_ROOT; };
 		3F39DC0945571E9E2219A08D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ViewController.swift; path = 2048/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		4B832FB67B0D97776D93D5C6 /* ExplodingLabel.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ExplodingLabel.swift; path = 2048/View/ExplodingLabel.swift; sourceTree = SOURCE_ROOT; };
 		5046E8AE849A81405F531767 /* Card.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Card.swift; path = 2048/Model/Card.swift; sourceTree = SOURCE_ROOT; };
 		5D26DD9F10714AFCEABB1777 /* Contents.json */ = {isa = PBXFileReference; explicitFileType = text.json; name = Contents.json; path = 2048/View/Assets.xcassets/AccentColor.colorset/Contents.json; sourceTree = SOURCE_ROOT; };
 		64165AF5E496856BCE86B353 /* Action.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Action.swift; path = 2048/Model/Action.swift; sourceTree = SOURCE_ROOT; };
 		7F6E93A2A6F1F7F67170D01F /* AppDelegate.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AppDelegate.swift; path = 2048/Supporting/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		8C0C718EB74543050F89E219 /* BubbleLabelViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = BubbleLabelViewController.swift; path = 2048/Controller/BubbleLabelViewController.swift; sourceTree = SOURCE_ROOT; };
 		9205F4E3F8C8E011C7CD6461 /* Contents.json */ = {isa = PBXFileReference; explicitFileType = text.json; name = Contents.json; path = 2048/View/Assets.xcassets/AppIcon.appiconset/Contents.json; sourceTree = SOURCE_ROOT; };
 		A755A49B2015358A2BFB0539 /* SceneDelegate.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = SceneDelegate.swift; path = 2048/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BA7F4F4B28B43DF2E6007896 /* Game.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Game.swift; path = 2048/Model/Game.swift; sourceTree = SOURCE_ROOT; };
@@ -185,9 +183,7 @@
 				64165AF5E496856BCE86B353 /* Action.swift */,
 				5046E8AE849A81405F531767 /* Card.swift */,
 				9205F4E3F8C8E011C7CD6461 /* Contents.json */,
-				4B832FB67B0D97776D93D5C6 /* ExplodingLabel.swift */,
 				7F6E93A2A6F1F7F67170D01F /* AppDelegate.swift */,
-				8C0C718EB74543050F89E219 /* BubbleLabelViewController.swift */,
 				ED70C9432F9A77590060652E /* sounds */,
 			);
 			sourceTree = "<group>";
@@ -389,13 +385,14 @@
 				66F5DF83363CC61BA1B9E426 /* TileView.swift in Sources */,
 				64800A03770BC67468391352 /* GameView.swift in Sources */,
 				87DFD688EBFFDD80677198F3 /* Game.swift in Sources */,
-				8EB1B6F0718DCEDB41EC24B8 /* ExplodingLabel.swift in Sources */,
 				7FE5CE52C59A961920B1697B /* ViewController.swift in Sources */,
 				FFED6A1DDE0E6E2748F31ECE /* CardView.swift in Sources */,
 				5F702B96946925CBD30B4064 /* CardView.swift in Sources */,
 				D060A46348A87CA4760D3D73 /* CardView.swift in Sources */,
 				030BDDB3F649906009E51FCC /* CardView.swift in Sources */,
 				EA2B0C87D181E8360D29991A /* CardView.swift in Sources */,
+				F78BB655783EA51806EA70A1 /* GameView.swift in Sources */,
+				595A20DD5BA63E2F6EC1C580 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +406,6 @@
 				86789A00A636AD7DF10C3772 /* CardView.swift in Sources */,
 				84B3A7BDA767D76915C657BD /* CardView.swift in Sources */,
 				0AEFC43DC229D127C044A2F1 /* Card.swift in Sources */,
-				23105D132CA682BF61A20CC8 /* BubbleLabelViewController.swift in Sources */,
 				74A35B37088BA564ED4AD945 /* ViewController.swift in Sources */,
 				96057ECD4BB7336C73F6761E /* CardView.swift in Sources */,
 				56BB3D6B45EA3A35D36958B9 /* CardView.swift in Sources */,

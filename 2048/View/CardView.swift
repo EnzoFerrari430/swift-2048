@@ -178,30 +178,7 @@ class CardView: UIView {
         )
     }
     
-    private func setupGesture() {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
-        longPress.minimumPressDuration = 0.3
-        self.addGestureRecognizer(longPress)
-        self.isUserInteractionEnabled = true
-    }
-    
-    @objc private func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
-        print("CardView LongPress: gesture=\(gesture.state)")
-        switch gesture.state {
-        case .began:
-            showBubbleEffect()
-            provideHapticFeedback()
-        case .ended:
-            // 松手时直接消除
-            hideBubbleEffect()  // 移除气泡
-            breakBubbleEffect()
-        case .cancelled:
-            // 取消时隐藏气泡
-            hideBubbleEffect()
-        default:
-            break
-        }
-    }
+    // MARK: - 气泡效果
     
     private func showBubbleEffect() {
         if bubbleView == nil {
@@ -233,7 +210,8 @@ class CardView: UIView {
         }
     }
     
-    // 玻璃破碎效果
+    // MARK: - 玻璃破碎效果
+    
     private func createGlassShatterEffect() {
         // 创建碎片数量
         let shardCount = 12
@@ -281,47 +259,4 @@ class CardView: UIView {
         shard.layer.shadowRadius = 2
         return shard
     }
-    
-    private func createParticleEffect() {
-        let particleEmitter = CAEmitterLayer()
-        particleEmitter.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        particleEmitter.emitterSize = CGSize(width: bounds.width, height: bounds.height)
-        particleEmitter.emitterShape = .circle
-        particleEmitter.renderMode = .additive
-        
-        let cell = CAEmitterCell()
-        cell.birthRate = 20
-        cell.lifetime = 1.0
-        cell.velocity = 100
-        cell.velocityRange = 50
-        cell.emissionRange = .pi * 2
-        cell.scale = 0.1
-        cell.scaleRange = 0.05
-        cell.alphaSpeed = -1.0
-        cell.contents = createBubbleParticleImage().cgImage
-        
-        particleEmitter.emitterCells = [cell]
-        layer.addSublayer(particleEmitter)
-        
-        // 自动移除粒子层
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            particleEmitter.removeFromSuperlayer()
-        }
-    }
-    
-    private func createBubbleParticleImage() -> UIImage {
-        let size = CGSize(width: 8, height: 8)
-        let renderer = UIGraphicsImageRenderer(size: size)
-        
-        return renderer.image { context in
-            UIColor.white.setFill()
-            context.cgContext.fillEllipse(in: CGRect(origin: .zero, size: size))
-        }
-    }
-    
-    private func provideHapticFeedback() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
-    }
-
 }
