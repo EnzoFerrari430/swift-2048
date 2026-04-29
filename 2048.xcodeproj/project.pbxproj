@@ -23,6 +23,7 @@
 		4C0C4CD1054717038EEDAF90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		544AE1F4A84BFEA46DF0DA2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		56BB3D6B45EA3A35D36958B9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		56DC8F8C92A44A386178022C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		5F702B96946925CBD30B4064 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		61F96D38B9EE9CEF6B0E85C7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		64800A03770BC67468391352 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
@@ -413,6 +414,7 @@
 				96057ECD4BB7336C73F6761E /* CardView.swift in Sources */,
 				56BB3D6B45EA3A35D36958B9 /* CardView.swift in Sources */,
 				26B27309AE71799B529CFA25 /* CardView.swift in Sources */,
+				56DC8F8C92A44A386178022C /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
