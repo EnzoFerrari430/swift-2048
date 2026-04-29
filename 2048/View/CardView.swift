@@ -228,7 +228,7 @@ class CardView: UIView {
         }) { _ in
             self.bubbleView?.removeFromSuperview()
             self.bubbleView = nil
-            // 注意：这里没有调用 removeFromSuperview()，卡片只是消失但还占位
+            self.removeFromSuperview()  // 真正从父视图移除
             completion?()
         }
     }
