@@ -109,6 +109,9 @@ class CardView: UIView {
                 userInfo: ["position": (row, col), "value": self.value]
             )
         }
+        
+        // 初始化手势识别
+        // setupGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -183,53 +186,100 @@ class CardView: UIView {
     }
     
     @objc private func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+        print("CardView LongPress: gesture=\(gesture.state)")
         switch gesture.state {
         case .began:
             showBubbleEffect()
             provideHapticFeedback()
-        case .ended, .cancelled:
-            if let bubbleView = bubbleView {
-                // 检查是否应该触发消除
-                let location = gesture.location(in: self)
-                if bounds.contains(location) {
-                    // 触发消除
-                    breakBubbleEffect()
-                } else {
-                    // 只是取消
-                    hideBubbleEffect()
-                }
-            }
+        case .ended:
+            // 松手时直接消除
+            hideBubbleEffect()  // 移除气泡
+            breakBubbleEffect()
+        case .cancelled:
+            // 取消时隐藏气泡
+            hideBubbleEffect()
         default:
             break
         }
     }
     
     private func showBubbleEffect() {
-        hideBubbleEffect()
-        bubbleView = label.addBubbleEffect()
-        bubbleView?.animateBubbleAppear()
-    }
-    
-    private func hideBubbleEffect() {
-        bubbleView?.animateBubbleDisappear {
-            self.bubbleView = nil
+        if bubbleView == nil {
+            bubbleView = label.addBubbleEffect()
+            bubbleView?.animateBubbleAppear()
         }
     }
     
+    private func hideBubbleEffect() {
+        bubbleView?.alpha = 0
+        bubbleView?.removeFromSuperview()
+        bubbleView = nil
+    }
+    
     func breakBubbleEffect(completion: (() -> Void)? = nil) {
-        // 创建粒子效果
-        createParticleEffect()
+        // 创建玻璃破碎效果
+        createGlassShatterEffect()
         
         // 隐藏卡片和气泡
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
             self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             self.bubbleView?.alpha = 0
         }) { _ in
             self.bubbleView?.removeFromSuperview()
             self.bubbleView = nil
+            // 注意：这里没有调用 removeFromSuperview()，卡片只是消失但还占位
             completion?()
         }
+    }
+    
+    // 玻璃破碎效果
+    private func createGlassShatterEffect() {
+        // 创建碎片数量
+        let shardCount = 12
+        
+        for i in 0..<shardCount {
+            let shard = createGlassShard(index: i)
+            superview?.addSubview(shard)
+            
+            // 计算飞散方向
+            let angle = CGFloat(i) * (2 * CGFloat.pi / CGFloat(shardCount)) + CGFloat.random(in: -0.3...0.3)
+            let distance: CGFloat = CGFloat.random(in: 50...120)
+            let dx = cos(angle) * distance
+            let dy = sin(angle) * distance
+            
+            // 随机旋转角度
+            let rotation = CGFloat.random(in: -2...2) * CGFloat.pi
+            
+            // 动画：飞散 + 旋转 + 消失
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+                shard.center = CGPoint(
+                    x: shard.center.x + dx,
+                    y: shard.center.y + dy
+                )
+                shard.transform = CGAffineTransform(rotationAngle: rotation)
+                shard.alpha = 0
+            } completion: { _ in
+                shard.removeFromSuperview()
+            }
+        }
+    }
+    
+    // 创建单个玻璃碎片
+    private func createGlassShard(index: Int) -> UIView {
+        let size = CGSize(
+            width: CGFloat.random(in: 10...25),
+            height: CGFloat.random(in: 10...25)
+        )
+        let shard = UIView(frame: CGRect(origin: .zero, size: size))
+        shard.center = self.center
+        shard.backgroundColor = self.backgroundColor?.withAlphaComponent(CGFloat.random(in: 0.6...0.9))
+        shard.layer.cornerRadius = CGFloat.random(in: 2...5)
+        shard.layer.shadowColor = UIColor.black.cgColor
+        shard.layer.shadowOffset = CGSize(width: 1, height: 1)
+        shard.layer.shadowOpacity = 0.3
+        shard.layer.shadowRadius = 2
+        return shard
     }
     
     private func createParticleEffect() {
