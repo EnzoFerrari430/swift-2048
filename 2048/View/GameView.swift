@@ -182,8 +182,9 @@ class GameView: UIView {
     private func delete(at position: Position) {
         if let cardView = getCardView(at: position) {
             // 如果卡片已经在删除动画中，不再重复触发
-            cardView.breakBubbleEffect {
-                // 动画完成后移除
+            cardView.breakBubbleEffect { [weak self] in
+                // 动画完成后更新分数
+                self?.notifyScoreUpdate()
             }
         }
     }
