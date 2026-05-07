@@ -12,6 +12,8 @@ protocol GameViewDelegate: AnyObject {
     func slideEnded(offset: CGPoint)
     func updateScore(_ score: Int)
     func resetScore()
+    func playMergeSound()
+    func playDeleteSound()
 }
 
 class GameView: UIView {
@@ -86,6 +88,9 @@ class GameView: UIView {
     }
     
     func performActions(_ actions: [Action]) {
+        var hasMerge = false
+        var hasDelete = false
+        
         for action in actions {
             switch action {
             case .new(let position, let newValue):
@@ -94,12 +99,23 @@ class GameView: UIView {
                 moveCard(from: from, to: to)
             case .upgrade(let from, let to, let newValue):
                 upgrade(from: from, to: to, newValue: newValue)
+                hasMerge = true
             case .delete(let position):
                 delete(at: position)
+                hasDelete = true
             default:
                 break
             }
         }
+        
+        // 播放音效
+        if hasMerge {
+            delegate?.playMergeSound()
+        }
+        if hasDelete {
+            delegate?.playDeleteSound()
+        }
+        
         notifyScoreUpdate()
     }
     

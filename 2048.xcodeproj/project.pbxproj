@@ -17,6 +17,7 @@
 		1A80F55F827884580BAF9CDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		1CC7D33FA782EA37AFE60DD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		26B27309AE71799B529CFA25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		365CF86B423DC2C74576989C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
 		3DFC0218FDF14F85B9A4C4AB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		43A7F51B736ADE6FA0773D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		4C0C4CD1054717038EEDAF90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
@@ -38,12 +39,15 @@
 		84B3A7BDA767D76915C657BD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		86789A00A636AD7DF10C3772 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		87DFD688EBFFDD80677198F3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F4F4B28B43DF2E6007896 /* Game.swift */; };
+		8985EBA812F3BC12A0008BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
+		8C540249E244FE393C8A4FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		8DD4C2F48CDB0E1EDC44A863 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		8F8BD5D3983CFD9234110953 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		907B017929BF36C2954E1A21 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		9158E0D6CAB29A1231C57816 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		94582E73912B4DEA6C22B981 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		96057ECD4BB7336C73F6761E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		977A81C121B5EA5F77898BA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		9807F821EB6A5B084449F2A8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		99BD8590724CC4CA919E99E2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		9F8B4211BB5CC7D0B340E1FA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
@@ -56,9 +60,13 @@
 		C44E0C2DA2E88D75737F21E4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 		CBAAC5A33CD4B977EEED9CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		D060A46348A87CA4760D3D73 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		D10D857EE651CDF66F9E282A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		DCB90484625F08569CEAA1FF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64165AF5E496856BCE86B353 /* Action.swift */; };
 		DF4F52090AC4C7B6AB02A248 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C574DBD837CB911C7DB5D3F0 /* TileView.swift */; };
+		E40F204D036617B05852A76D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		EA2B0C87D181E8360D29991A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		F1BA630BB0B9E3760C8C187F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
+		F6119B2A6D2AE2B798B24AA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39DC0945571E9E2219A08D /* ViewController.swift */; };
 		F78BB655783EA51806EA70A1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766964EB880DB9512AB1F8 /* GameView.swift */; };
 		FFED6A1DDE0E6E2748F31ECE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE017A0A0109648C7D0514 /* CardView.swift */; };
 /* End PBXBuildFile section */
@@ -393,6 +401,12 @@
 				EA2B0C87D181E8360D29991A /* CardView.swift in Sources */,
 				F78BB655783EA51806EA70A1 /* GameView.swift in Sources */,
 				595A20DD5BA63E2F6EC1C580 /* CardView.swift in Sources */,
+				365CF86B423DC2C74576989C /* TileView.swift in Sources */,
+				8985EBA812F3BC12A0008BE0 /* ViewController.swift in Sources */,
+				E40F204D036617B05852A76D /* ViewController.swift in Sources */,
+				F6119B2A6D2AE2B798B24AA7 /* ViewController.swift in Sources */,
+				977A81C121B5EA5F77898BA0 /* ViewController.swift in Sources */,
+				D10D857EE651CDF66F9E282A /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +425,8 @@
 				56BB3D6B45EA3A35D36958B9 /* CardView.swift in Sources */,
 				26B27309AE71799B529CFA25 /* CardView.swift in Sources */,
 				56DC8F8C92A44A386178022C /* CardView.swift in Sources */,
+				F1BA630BB0B9E3760C8C187F /* CardView.swift in Sources */,
+				8C540249E244FE393C8A4FD1 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

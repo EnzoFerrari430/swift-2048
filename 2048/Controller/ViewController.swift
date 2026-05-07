@@ -15,6 +15,10 @@ class ViewController: UIViewController, GameViewDelegate {
     
     // 背景音乐播放器
     private var backgroundMusicPlayer: AVAudioPlayer?
+    // 音效播放器
+    private var slideSoundPlayer: AVAudioPlayer?
+    private var glassbreakSoundPlayer: AVAudioPlayer?
+    private var dingSoundPlayer: AVAudioPlayer?
 
     // 计分label
     private let scoreLabel: UILabel = {
@@ -64,6 +68,8 @@ class ViewController: UIViewController, GameViewDelegate {
         // 设置背景音乐
         setupBackgroundMusic()
         
+        // 设置滑动音效
+        setupSoundEffects()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleCardLongPress(_:)),
@@ -86,11 +92,46 @@ class ViewController: UIViewController, GameViewDelegate {
         do {
             backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
             backgroundMusicPlayer?.numberOfLoops = -1  // 无限循环
-            backgroundMusicPlayer?.volume = 0.5         // 音量50%
+            backgroundMusicPlayer?.volume = 0.2         // 音量20%
             backgroundMusicPlayer?.play()
         } catch {
             print("背景音乐播放失败: \(error)")
         }
+    }
+    
+    private func setupSoundEffects() {
+        // 滑动音效
+        if let url = Bundle.main.url(forResource: "slide", withExtension: "mp3") {
+            slideSoundPlayer = try? AVAudioPlayer(contentsOf: url)
+            slideSoundPlayer?.volume = 0.5
+        }
+        
+        // 消除音效
+        if let url = Bundle.main.url(forResource: "glassbreak", withExtension: "mp3") {
+            glassbreakSoundPlayer = try? AVAudioPlayer(contentsOf: url)
+            glassbreakSoundPlayer?.volume = 0.6
+        }
+        
+        // 合成音效
+        if let url = Bundle.main.url(forResource: "ding", withExtension: "mp3") {
+            dingSoundPlayer = try? AVAudioPlayer(contentsOf: url)
+            dingSoundPlayer?.volume = 0.5
+        }
+    }
+    
+    private func playSlideSound() {
+        slideSoundPlayer?.currentTime = 0
+        slideSoundPlayer?.play()
+    }
+    
+    private func playGlassbreakSound() {
+        glassbreakSoundPlayer?.currentTime = 0
+        glassbreakSoundPlayer?.play()
+    }
+    
+    private func playDingSound() {
+        dingSoundPlayer?.currentTime = 0
+        dingSoundPlayer?.play()
     }
     
     @objc private func handleCardLongPress(_ notification: Notification) {
@@ -118,6 +159,9 @@ class ViewController: UIViewController, GameViewDelegate {
     }
     
     func slideEnded(offset: CGPoint) {
+        // 播放滑动音效
+        playSlideSound()
+        
         let direction: Direction
         if offset.y > offset.x {
             if offset.y > -offset.x {
@@ -212,6 +256,14 @@ class ViewController: UIViewController, GameViewDelegate {
     
     func resetScore() {
         scoreLabel.text = "Score: 0"
+    }
+    
+    func playMergeSound() {
+        playDingSound()
+    }
+    
+    func playDeleteSound() {
+        playGlassbreakSound()
     }
 
 }
